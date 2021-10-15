@@ -1,8 +1,5 @@
 .App {
   background-color: #1C1A19;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
 }
 
 .App__logo {
@@ -18,7 +15,56 @@
   height: 200px;
 }
 
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  padding: 25px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__logo {
+  width: 269px;
+  height: 61px;
+}
+
+.Nav {
+  display: flex;
+}
+
+.Nav_btn {
+  color: aliceblue;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.Nav_btn:hover {
+  color: #FDBF5A;
+}
+
+.Nav_btn:active {
+  color: #FDBF5A;
+}
+
+.Profile {
+  color: aliceblue;
+}
+
 .Login__wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Login__inner {
   background: url(./img/map.png) center center no-repeat;
   background-size: cover;
   width: 70vw;
@@ -27,4 +73,85 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+
+.Login__form {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 50px 110px;
+}
+
+.Login__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.Login__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login__label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.Login__input {
+  width: 355px;
+  padding: 10px 0px;
+  border-style: unset;
+  background-color: unset;
+  border-bottom: 2px solid #e4e4e4;
+  margin-bottom: 25px;
+}
+
+.Login__input:focus-visible {
+  outline: unset;
+}
+
+.Login__input:last-child {
+  background-color: brown;
+}
+
+.Login__info {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #828282;
+  text-align: end;
+  margin-bottom: 46px;
+}
+
+.Login__submit {
+  width: 353px;
+  height: 61px;
+  background: #FDBF5A;
+  border-radius: 70px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+  border-style: none;
+  margin-bottom: 33px;
+}
+
+.Login__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login__signUp-link {
+  color: #FDBF5A;
 }
