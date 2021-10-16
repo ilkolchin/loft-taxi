@@ -15,13 +15,6 @@ const PAGES = {
 
 class App extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     currentPage: "login",
-  //   }
-  // }
-
   state = { currentPage: "map" }
 
   navigateTo = (page) => {
