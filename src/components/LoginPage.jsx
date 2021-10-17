@@ -4,19 +4,13 @@ import LoginPart from "./LoginPart";
 
 class LoginPage extends React.Component {
 
-  navigateTo = (page) => {
-    this.setState({ currentPage: page });
-  };
-
   render() {
-
-    console.log("loginpage", this.state);
-  return <>
-    <div className="Login__wrapper">
-      <HelloPart />
-      <LoginPart navigateTo={this.navigateTo} />
-    </div>
-  </>
+    return <>
+      <div className="Login__wrapper">
+        <HelloPart />
+        <LoginPart />
+      </div>
+    </>
   }
 }
 
