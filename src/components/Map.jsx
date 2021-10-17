@@ -1,7 +1,6 @@
 import React from "react";
 import mapboxgl from "mapbox-gl";
 
-
 export class Map extends React.Component {
   map = null;
   mapContainer = React.createRef();

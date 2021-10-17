@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/normalize.css';
 import './styles/base.css';
 import './App.css';
+// import '../node_modules/mapbox-gl/src/css/mapbox-gl.css'
 import LoginPage from './components/LoginPage';
 import { Profile } from './components/Profile';
 import { Map } from './components/Map';
@@ -25,13 +26,6 @@ class App extends React.Component {
       this.setState({ currentPage: "login" });
     }
   };
-
-  // componentDidMount() {
-  //   if (this.props.isLoggedIn) {
-  //     this.setState({ currentPage: 'map' });
-  //   }
-  // }
-
 
   render() {
     const Page = PAGES[this.state.currentPage];
@@ -65,7 +59,7 @@ class App extends React.Component {
         {header}
         <main>
           <section>
-            <Page navigate={this.navigateTo}/>
+            <Page navigate={this.navigateTo} />
           </section>
         </main>
       </div>
