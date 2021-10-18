@@ -13,6 +13,11 @@ class LoginForm extends React.Component {
     this.props.loginNav("reg");
   }
 
+  componentDidUpdate() {
+    const { isLoggedIn, navigate } = this.props;
+    isLoggedIn && navigate('map')
+  }
+
   render() {
     return (
       <div className="Login__form">

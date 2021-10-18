@@ -31,7 +31,7 @@ class App extends React.Component {
     const Page = PAGES[this.state.currentPage];
     let header;
 
-    // if (this.state.currentPage !== "login") { 
+    if (this.state.currentPage !== "login") { 
     header =
       <header>
         <img src={logo} alt="логотип такси" className="Header__logo" />
@@ -52,7 +52,7 @@ class App extends React.Component {
           </ul>
         </nav>
       </header>
-    // }
+    }
 
     return <>
       <div className="App">

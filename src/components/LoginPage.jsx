@@ -8,7 +8,7 @@ class LoginPage extends React.Component {
     return <>
       <div className="Login__wrapper">
         <HelloPart />
-        <LoginPart />
+        <LoginPart navigate={this.props.navigate} />
       </div>
     </>
   }
