@@ -1,9 +1,13 @@
 .App {
   background-color: #1C1A19;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App__logo {
-  width: 30vw;
+  flex-grow: 3;
   height: 100%;
   display: flex;
   align-items: center;
@@ -25,6 +29,10 @@ header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .Header__logo {
@@ -60,14 +68,14 @@ header {
 
 .Login__wrapper {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .Login__inner {
   background: url(./img/map.png) center center no-repeat;
   background-size: cover;
-  width: 70vw;
+  flex-grow: 7;
   height: 100%;
   display: flex;
   align-items: center;
@@ -154,4 +162,18 @@ header {
 
 .Login__signUp-link {
   color: #FDBF5A;
+}
+
+.Map__wrapper {
+  position: relative;
+  width: 100%;
+  height: 99%;
+}
+
+.Map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }

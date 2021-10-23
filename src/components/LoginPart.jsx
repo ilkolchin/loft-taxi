@@ -1,9 +1,9 @@
 import React from "react";
-import LoginForm from "./LoginForm";
+import { LoginFormWithAuth } from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
 const PAGES = {
-  login: LoginForm,
+  login: LoginFormWithAuth,
   reg: RegisterForm
 }
 
@@ -15,20 +15,14 @@ class LoginPart extends React.Component {
     this.setState({ loginPage: page });
   };
 
-  navigateTo = (page) => {
-    this.setState({ currentPage: page });
-  };
-
 
   render() {
-
-    console.log("loginpart", this.state);
 
     const Page = PAGES[this.state.loginPage];
 
     return (
       <div className="Login__inner">
-        <Page loginNav={this.loginNav} navigateTo={this.navigateTo} />
+        <Page loginNav={this.loginNav} navigate={this.props.navigate} />
       </div>
     )
   }
