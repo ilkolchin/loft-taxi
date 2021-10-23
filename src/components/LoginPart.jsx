@@ -22,7 +22,7 @@ class LoginPart extends React.Component {
 
     return (
       <div className="Login__inner">
-        <Page loginNav={this.loginNav} navigate={this.props.navigate} />
+        <Page loginNav={this.loginNav} />
       </div>
     )
   }

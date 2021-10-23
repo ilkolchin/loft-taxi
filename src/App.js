@@ -1,65 +1,51 @@
 import React from 'react';
+
 import './styles/normalize.css';
 import './styles/base.css';
 import './App.css';
 // import '../node_modules/mapbox-gl/src/css/mapbox-gl.css'
+
 import LoginPage from './components/LoginPage';
+import { Header } from './components/Header';
 import { Profile } from './components/Profile';
 import { Map } from './components/Map';
-import logo from './img/logo-taxi.png';
-import { withAuth } from './components/AuthContext';
+import {PrivateRoute} from './components/PrivateRoute'
+// import logo from './img/logo-taxi.png';
 
-const PAGES = {
-  map: Map,
-  profile: Profile,
-  login: LoginPage
-}
+import { connect } from 'react-redux';
+import { logOut } from './actions';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
-
-  state = { currentPage: "login" }
-
-  navigateTo = (page) => {
-    if (this.props.isLoggedIn) {
-      this.setState({ currentPage: page });
-    } else {
-      this.setState({ currentPage: "login" });
-    }
-  };
-
   render() {
-    const Page = PAGES[this.state.currentPage];
-    let header;
-
-    if (this.state.currentPage !== "login") { 
-    header =
-      <header>
-        <img src={logo} alt="логотип такси" className="Header__logo" />
-        <nav>
-          <ul className="Nav">
-            <li>
-              <button className="Nav_btn" onClick={() => { this.navigateTo("map") }} >Карта</button>
-            </li>
-            <li>
-              <button className="Nav_btn" onClick={() => { this.navigateTo("profile") }} >Профиль</button>
-            </li>
-            <li>
-              <button className="Nav_btn" onClick={() => {
-                this.navigateTo("login");
-                this.props.logOut()
-              }} >Выйти</button>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    }
+    // const header =
+    //   <header>
+    //     <img src={logo} alt="логотип такси" className="Header__logo" />
+    //     <nav>
+    //       <ul className="Nav">
+    //         <li className="Nav_btn">
+    //           <Link to="/map" >Карта</Link>
+    //         </li>
+    //         <li className="Nav_btn">
+    //           <Link to="/profile">Профиль</Link>
+    //         </li>
+    //         <li className="Nav_btn">
+    //           <Link to="/">Выйти</Link>
+    //         </li>
+    //       </ul>
+    //     </nav>
+    //   </header>;
 
     return <>
       <div className="App">
-        {header}
+        {this.props.isLoggedIn && <Header/>}
         <main>
           <section>
-            <Page navigate={this.navigateTo} />
+            <Switch>
+              <Route exact path="/" component={LoginPage} />
+              <PrivateRoute path="/map" component={Map} />
+              <PrivateRoute path="/profile" component={Profile} />
+            </Switch>
           </section>
         </main>
       </div>
@@ -67,5 +53,8 @@ class App extends React.Component {
   }
 }
 
-export default withAuth(App);
+export default connect(
+  (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
+  { logOut }
+)(App);
 
