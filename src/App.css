@@ -165,6 +165,10 @@ main {
   justify-content: center;
 }
 
+.Login__signUp{
+  margin-right: 10px;
+}
+
 .Login__signUp-link {
   color: #FDBF5A;
 }

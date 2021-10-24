@@ -1,28 +1,17 @@
 import React from "react";
-import { LoginFormWithAuth } from "./LoginForm";
-import RegisterForm from "./RegisterForm";
+import { Link, Switch, Route } from "react-router-dom";
 
-const PAGES = {
-  login: LoginFormWithAuth,
-  reg: RegisterForm
-}
+import { LoginFormWithAuth } from "./LoginForm";
+import { RegisterFormWithAuth } from "./RegisterForm";
 
 class LoginPart extends React.Component {
-
-  state = { loginPage: "login" };
-
-  loginNav = (page) => {
-    this.setState({ loginPage: page });
-  };
-
-
   render() {
-
-    const Page = PAGES[this.state.loginPage];
-
     return (
       <div className="Login__inner">
-        <Page loginNav={this.loginNav} />
+        <Switch>
+          <Route exact path="/" component={LoginFormWithAuth} />
+          <Route exact path="/signup" component={RegisterFormWithAuth} />
+        </Switch>
       </div>
     )
   }

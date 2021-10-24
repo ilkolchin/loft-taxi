@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { authenticate } from '../actions'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
@@ -9,19 +9,16 @@ class LoginForm extends React.Component {
     event.preventDefault();
     const { email, password } = event.target;
     this.props.authenticate(email.value, password.value);
-    console.log('clock');
-  }
+    console.log('click на кнопке войти');
 
-  onClickHandler = () => {
-    this.props.loginNav("reg");
   }
-
-  // componentDidUpdate() {
-  //   const { isLoggedIn, navigate } = this.props;
-  //   isLoggedIn && navigate('map')
-  // }
 
   render() {
+
+    if(this.props.isLoggedIn) {
+      return <Redirect to='/map' />
+    }
+
     return (
       <div className="Login__form">
         <h1 className="Login__title">Войти</h1>
@@ -31,13 +28,11 @@ class LoginForm extends React.Component {
           <label htmlFor="password" className="Login__label">Пароль</label>
           <input id="password" type="password" name="password" placeholder="test" className="Login__input" />
           <div className="Login__info">Забыли пароль?</div>
-          {/* <Link to="/map" > */}
-            <input type="submit" value="Войти" className="Login__submit" />
-          {/* </Link> */}
+          <input type="submit" value="Войти" className="Login__submit" />
         </form>
         <div className="Login__footer">
           <div className="Login__signUp">Новый пользователь?</div>
-          <button className="Login__signUp-link" onClick={this.onClickHandler}>Регистрация</button>
+          <Link to="/signup" className="Login__signUp-link" >Регистрация</Link>
         </div>
       </div>
     );

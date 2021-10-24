@@ -9,40 +9,29 @@ import LoginPage from './components/LoginPage';
 import { Header } from './components/Header';
 import { Profile } from './components/Profile';
 import { Map } from './components/Map';
-import {PrivateRoute} from './components/PrivateRoute'
-// import logo from './img/logo-taxi.png';
+import { PrivateRoute } from './components/PrivateRoute'
 
 import { connect } from 'react-redux';
-import { logOut } from './actions';
+import { logIn } from './actions';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
-    // const header =
-    //   <header>
-    //     <img src={logo} alt="логотип такси" className="Header__logo" />
-    //     <nav>
-    //       <ul className="Nav">
-    //         <li className="Nav_btn">
-    //           <Link to="/map" >Карта</Link>
-    //         </li>
-    //         <li className="Nav_btn">
-    //           <Link to="/profile">Профиль</Link>
-    //         </li>
-    //         <li className="Nav_btn">
-    //           <Link to="/">Выйти</Link>
-    //         </li>
-    //       </ul>
-    //     </nav>
-    //   </header>;
+
+    const token = localStorage.getItem('token');
+
+    if (token !== undefined && token !== null ) {
+      this.props.logIn();
+    }
 
     return <>
       <div className="App">
-        {this.props.isLoggedIn && <Header/>}
+        {this.props.isLoggedIn && <Header />}
         <main>
           <section>
             <Switch>
               <Route exact path="/" component={LoginPage} />
+              <Route exact path="/signup" component={LoginPage} />
               <PrivateRoute path="/map" component={Map} />
               <PrivateRoute path="/profile" component={Profile} />
             </Switch>
@@ -55,6 +44,6 @@ class App extends React.Component {
 
 export default connect(
   (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
-  { logOut }
+  { logIn }
 )(App);
 
