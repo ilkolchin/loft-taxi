@@ -1,28 +1,28 @@
 import React from "react";
-import { withAuth } from "./AuthContext";
+import { connect } from "react-redux";
+import { authenticate } from '../actions'
+import { Link, Redirect } from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
-  handleSubmit = event => {
+  authenticate = event => {
     event.preventDefault();
     const { email, password } = event.target;
-    this.props.logIn(email.value, password.value);
-  }
+    this.props.authenticate(email.value, password.value);
+    console.log('click на кнопке войти');
 
-  onClickHandler = () => {
-    this.props.loginNav("reg");
-  }
-
-  componentDidUpdate() {
-    const { isLoggedIn, navigate } = this.props;
-    isLoggedIn && navigate('map')
   }
 
   render() {
+
+    if(this.props.isLoggedIn) {
+      return <Redirect to='/map' />
+    }
+
     return (
       <div className="Login__form">
         <h1 className="Login__title">Войти</h1>
-        <form className="Login__content" onSubmit={this.handleSubmit}>
+        <form className="Login__content" onSubmit={this.authenticate}>
           <label htmlFor="email" className="Login__label">Email</label>
           <input id="email" type="email" name="email" placeholder="test@test.com" className="Login__input" />
           <label htmlFor="password" className="Login__label">Пароль</label>
@@ -32,11 +32,14 @@ class LoginForm extends React.Component {
         </form>
         <div className="Login__footer">
           <div className="Login__signUp">Новый пользователь?</div>
-          <button className="Login__signUp-link" onClick={this.onClickHandler}>Регистрация</button>
+          <Link to="/signup" className="Login__signUp-link" >Регистрация</Link>
         </div>
       </div>
     );
   }
 }
 
-export const LoginFormWithAuth = withAuth(LoginForm);
+export const LoginFormWithAuth = connect(
+  (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
+  { authenticate }
+)(LoginForm);
