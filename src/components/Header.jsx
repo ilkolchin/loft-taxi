@@ -5,7 +5,7 @@ import { logOut } from "../actions";
 
 import logo from '../img/logo-taxi.png';
 
-class H extends React.Component {
+class Header extends React.Component {
   render() {
     return (
       <header>
@@ -33,4 +33,4 @@ class H extends React.Component {
   }
 }
 
-export const Header = connect(null, { logOut })(H)
+export default connect(null, { logOut })(Header)

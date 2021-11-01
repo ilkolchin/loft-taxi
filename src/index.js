@@ -6,12 +6,17 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { theme } from "loft-taxi-mui-theme";
+import { ThemeProvider } from '@mui/material';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,
