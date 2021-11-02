@@ -7,8 +7,8 @@ import './App.css';
 
 import LoginPage from './components/LoginPage';
 import Header from './components/Header';
-import { Profile } from './components/Profile';
-import { Map } from './components/Map';
+import Profile from './components/Profile';
+import Map from './components/Map';
 import { PrivateRoute } from './components/PrivateRoute'
 
 import { connect } from 'react-redux';
