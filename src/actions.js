@@ -5,6 +5,7 @@ export const REGISTER = 'REGISTER'
 
 export const UPDATECARD = 'UPDATECARD'
 export const CARDADDED = 'CARDADDED'
+export const ASKFORCARD = 'ASKFORCARD'
 
 export const ASKFORADDRESS = 'ASKFORADDRESS'
 export const GETADDRESSES = 'GETADDRESSES'
@@ -29,6 +30,7 @@ export const updateCard = (cardName, cardNumber, cardDate, cardCvc) => ({
   type: UPDATECARD, payload: { cardName, cardNumber, cardDate, cardCvc }
 })
 export const cardAdded = () => ({ type: CARDADDED })
+export const askForCard = () => ({ type: ASKFORCARD })
 
 
 export const askForAddress = () => ({ type: ASKFORADDRESS })

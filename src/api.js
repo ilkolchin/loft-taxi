@@ -68,13 +68,19 @@ export const serverUpdateCard = async (cardName, cardNumber, cardDate, cardCvc) 
   });
 }
 
-export const serverAddressList = async () => {
-  return fetch('https://loft-taxi.glitch.me/addressList').then(res => res.json()).then(data => {
-    // console.log(data.addresses);
-    return data.addresses
+export const serverGetCard = async () => {
+  let token = localStorage.getItem('token');
+  return fetch(`https://loft-taxi.glitch.me/card?token=${token}`).then(res => res.json()).then(data => {
+    console.log(data);
+    return data;
   })
 }
 
+export const serverAddressList = async () => {
+  return fetch('https://loft-taxi.glitch.me/addressList').then(res => res.json()).then(data => {
+    return data.addresses
+  })
+}
 
 export const serverGetRoute = async (from, to) => {
   return fetch(`https://loft-taxi.glitch.me/route?address1=${from}&address2=${to}`).then(res => res.json()).then(data => {

@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { AUTHENTICATE, REGISTER, UPDATECARD, ASKFORADDRESS, ASKFOROUTE } from './actions';
+import { AUTHENTICATE, REGISTER, UPDATECARD, ASKFORCARD, ASKFORADDRESS, ASKFOROUTE } from './actions';
 import { logIn, cardAdded, getAddresses, getRoute } from './actions';
-import { serverLogin, serverRegister, serverUpdateCard, serverAddressList, serverGetRoute } from './api';
+import { serverLogin, serverRegister, serverUpdateCard, serverAddressList, serverGetRoute, serverGetCard } from './api';
 
 function* authenticateSaga(action) {
   const { email, password } = action.payload;
@@ -27,6 +27,14 @@ function* updateCardSaga(action) {
   }
 }
 
+function* getCardSaga() {
+  const { id, cardNumber, expiryDate, cardName, cvc } = yield call(serverGetCard);
+  console.log(id, cardNumber, expiryDate, cardName, cvc);
+  if ((id && cardNumber && expiryDate && cardName && cvc) !== undefined) {
+    yield put(cardAdded());
+  }
+}
+
 function* getAddressesSaga() {
   const addresses = yield call(serverAddressList);
   yield put(getAddresses(addresses));
@@ -43,6 +51,7 @@ export function* rootSaga() {
   yield takeEvery(AUTHENTICATE, authenticateSaga);
   yield takeEvery(REGISTER, registrationSaga)
   yield takeEvery(UPDATECARD, updateCardSaga)
+  yield takeEvery(ASKFORCARD, getCardSaga)
   yield takeEvery(ASKFORADDRESS, getAddressesSaga)
   yield takeEvery(ASKFOROUTE, getRouteSaga)
 }

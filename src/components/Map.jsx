@@ -3,7 +3,8 @@ import mapboxgl from "mapbox-gl";
 import { connect } from "react-redux";
 import { Autocomplete, TextField, Typography, Button } from "@mui/material";
 import { Link } from 'react-router-dom'
-import { askForAddress, askForRoute } from '../actions'
+import { askForAddress, askForRoute, askForCard } from '../actions'
+import { drawRoute } from "../drawRoute";
 
 class Map extends React.Component {
   map = null;
@@ -20,11 +21,18 @@ class Map extends React.Component {
       attributionControl: false
     });
 
-    this.props.askForAddress()
+    this.props.askForCard();
+    this.props.askForAddress();
   }
 
   componentWillUnmount() {
     this.map.remove();
+  }
+
+  componentDidUpdate() {
+    if (this.props.route.length !== 0) {
+      drawRoute(this.map, this.props.route);
+    }
   }
 
   handleSubmit = async event => {
@@ -34,6 +42,7 @@ class Map extends React.Component {
   }
 
   render() {
+
 
     return <div className="Map__wrapper" >
       <div className="Map" ref={this.mapContainer} />
@@ -60,8 +69,8 @@ class Map extends React.Component {
         </>
         :
         <>
-          <div style={{ position: "absolute", top: '2%', left: '2%'}}>
-            <Typography fontSize='18px' align='center' sx={{marginBottom:'25px'}}>Введите платежные данные</Typography>
+          <div style={{ position: "absolute", top: '2%', left: '2%' }}>
+            <Typography fontSize='18px' align='center' sx={{ marginBottom: '25px' }}>Введите платежные данные</Typography>
             <Link to='/profile' className="Login__submit">Перейти в профиль</Link>
           </div>
         </>
@@ -77,5 +86,5 @@ export default connect(
     addresses: state.address.addresses,
     route: state.route.route
   }),
-  { askForAddress, askForRoute })
+  { askForAddress, askForRoute, askForCard })
   (Map);
