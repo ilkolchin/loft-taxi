@@ -147,8 +147,7 @@ main {
 }
 
 .Login__submit {
-  width: 353px;
-  height: 61px;
+  padding: 20px 55px;
   background: #FDBF5A;
   border-radius: 70px;
   font-style: normal;
@@ -157,6 +156,7 @@ main {
   line-height: 29px;
   border-style: none;
   margin-bottom: 33px;
+  cursor: pointer;
 }
 
 .Login__footer {

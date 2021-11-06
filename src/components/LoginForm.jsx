@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
           <label htmlFor="email" className="Login__label">Email</label>
           <input id="email" type="email" name="email" placeholder="test@test.com" className="Login__input" />
           <label htmlFor="password" className="Login__label">Пароль</label>
-          <input id="password" type="password" name="password" placeholder="test" className="Login__input" />
+          <input id="password" type="password" name="password" placeholder="123123" className="Login__input" />
           <div className="Login__info">Забыли пароль?</div>
           <input type="submit" value="Войти" className="Login__submit" />
         </form>
