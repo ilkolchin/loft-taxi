@@ -136,6 +136,10 @@ main {
   background-color: brown;
 }
 
+.Login__input:invalid {
+  border-bottom: 2px solid #FF0000;
+}
+
 .Login__info {
   font-style: normal;
   font-weight: normal;
