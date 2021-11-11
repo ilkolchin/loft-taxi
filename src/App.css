@@ -12,6 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
+  
 }
 
 .App__logo-img {
@@ -29,6 +31,7 @@ header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  z-index: 3;
 }
 
 main {
@@ -80,12 +83,24 @@ main {
 .Login__inner {
   background: url(./img/map.png) center center no-repeat;
   background-size: cover;
+  background-blend-mode: luminosity;
   flex-grow: 7;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.Login__inner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 6, 6, 0.3);
+  z-index: 2;
 }
 
 
@@ -96,6 +111,7 @@ main {
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 50px 110px;
+  z-index: 3;
 }
 
 .Login__title {
@@ -130,10 +146,8 @@ main {
 
 .Login__input:focus-visible {
   outline: unset;
-}
-
-.Login__input:last-child {
-  background-color: brown;
+  border-bottom: 2px solid #000000;
+  transition: 0.4s;
 }
 
 .Login__input:invalid {
@@ -152,7 +166,7 @@ main {
 
 .Login__submit {
   padding: 20px 55px;
-  background: #FDBF5A;
+  background: #D8D7D5;
   border-radius: 70px;
   font-style: normal;
   font-weight: normal;
@@ -163,18 +177,32 @@ main {
   cursor: pointer;
 }
 
+.Login__submit:hover{
+  background: #FDBF5A;
+  transition: background 0.4s;
+}
+
+.Login__submit:active {
+  background: #FFA842;
+  transition: background 0.4s;
+}
+
 .Login__footer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Login__signUp{
+.Login__signUp {
   margin-right: 10px;
 }
 
 .Login__signUp-link {
   color: #FDBF5A;
+}
+
+.Login__signUp-link:hover {
+  text-decoration: underline;
 }
 
 .Map__wrapper {
@@ -189,4 +217,208 @@ main {
   right: 0;
   left: 0;
   bottom: 0;
+}
+
+.Profile__wrapper {
+  padding: 60px 44px 66px;
+  background-color: white;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.Profile__title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 13px;
+}
+
+.Profile__subtitle {
+  font-size: 18px;
+  line-height: 21px;
+  color: #7B7B7B;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.Profile__content {
+  align-items: center;
+}
+
+.Profile__label {
+  font-size: 16px;
+  line-height: 19px;
+  color: #828282;
+}
+
+.Profile__input {
+  font-weight: bold;
+}
+
+.Profile__input::placeholder {
+  font-weight: normal;
+}
+
+.Profile__block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.Profile__block-inner {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.Profile__block-inner:last-child {
+  margin-right: 0;
+}
+
+.Profile__input-small {
+  width: 160px;
+}
+
+.nomargin {
+  margin: unset;
+}
+
+.Profile__submit {
+  margin-bottom: 0;
+  padding: 18px 124px;
+}
+
+.Route {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding-top: 25px;
+}
+
+.Route__input {
+  margin-bottom: 10px;
+}
+
+.Route__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.Route__input::after {
+  content: '';
+  border-bottom: 1px solid #E0E0E0;
+  width: 300px;
+  position: absolute;
+}
+
+.Route__error {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 10px;
+}
+
+.Route__error-info {
+  font-size: 18px;
+  line-height: 21px;
+  color: #7B7B7B;
+  margin-bottom: 25px;
+}
+
+.Route__error-btn {
+  margin: 20px;
+}
+
+.Route__cars {
+  margin-top: 25px;
+  padding: 32px;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Cars {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.Car__item {
+  margin-right: 20px;
+}
+
+.Car__item:last-child {
+  margin-right: 0;
+}
+
+.Car {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.Car:hover {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+#car {
+  visibility: hidden;
+  position: absolute;
+}
+
+label>#car:checked+div {
+  opacity: 1;
+  transition: opacity 0.4s;
+  box-shadow: 0px 3px 20px rgb(253 191 90);
+}
+
+.Car__name {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.Car__info {
+  font-size: 11px;
+  line-height: 13px;
+  color: #828282;
+}
+
+.Car__price {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 13px;
+}
+
+.Car__img {
+  width: 95px;
+  height: 73px;
+}
+
+/* Animations */
+
+.slide-in-blurred-left {
+	animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.slide-in-blurred-top-1 {
+	animation: slide-in-blurred-top 0.6s 0.12s both;
+}
+.slide-in-blurred-top-2 {
+	animation: slide-in-blurred-top 0.6s 0.14s both;
+}
+.slide-in-blurred-top-3 {
+	animation: slide-in-blurred-top 0.6s 0.16s both;
 }

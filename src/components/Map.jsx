@@ -1,10 +1,13 @@
 import React from "react";
 import mapboxgl from "mapbox-gl";
 import { connect } from "react-redux";
-import { Autocomplete, TextField, Typography, Button } from "@mui/material";
+import { Autocomplete, TextField} from "@mui/material";
 import { Link } from 'react-router-dom'
 import { askForAddress, askForRoute, askForCard } from '../actions'
 import { drawRoute } from "../drawRoute";
+import car1 from '../img/car1.png'
+import car2 from '../img/car2.png'
+import car3 from '../img/car3.png'
 
 class Map extends React.Component {
   map = null;
@@ -46,37 +49,72 @@ class Map extends React.Component {
 
     return <div className="Map__wrapper" >
       <div className="Map" ref={this.mapContainer} />
-      {this.props.isCardUpdated ?
-        <>
-          <form onSubmit={this.handleSubmit}>
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={this.props.addresses}
-              sx={{ width: 300, position: 'absolute', top: '2%', left: '2%', background: '#fff' }}
-              renderInput={(params) => <TextField {...params} label="Откуда" name='from' />}
-            />
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={this.props.addresses}
-              sx={{ width: 300, position: 'absolute', top: '10%', left: '2%', background: '#fff' }}
-              renderInput={(params) => <TextField {...params} label="Куда" name='to' />}
-            />
-            <Button sx={{ position: 'absolute', top: '18%', left: '2%', background: '#fff' }} type='submit'
-            >Вызвать такси</Button>
-          </form>
-        </>
-        :
-        <>
-          <div style={{ position: "absolute", top: '2%', left: '2%' }}>
-            <Typography fontSize='18px' align='center' sx={{ marginBottom: '25px' }}>Введите платежные данные</Typography>
-            <Link to='/profile' className="Login__submit">Перейти в профиль</Link>
-          </div>
-        </>
-      }
+      <form className='Route' onSubmit={this.handleSubmit}>
+        {this.props.isCardUpdated ?
+          <div className="Route__inputs">
+            <div className="Route__input">
+              <Autocomplete
+                disablePortal
+                id="combo-box-demo"
+                options={this.props.addresses}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Откуда" name='from' />}
+              />
+            </div>
+            <div className="Route__input">
+              <Autocomplete
+                disablePortal
+                id="combo-box-demo"
+                options={this.props.addresses}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Куда" name='to' />}
+              />
+            </div>
+          </div> :
+          <><h1 className="Route__error">Ошибка карты</h1>
+            <h5 className='Route__error-info'>Введите платёжные данные</h5></>}
+        {this.props.isCardUpdated ?
+          <div className="Route__cars">
+            <ul className='Cars'>
+              <li className='Car__item'>
+                <label>
+                  <input type="radio" name='car' id="car" />
+                  <div className="Car slide-in-blurred-top-1">
+                    <h5 className='Car__name'>Стандарт</h5>
+                    <div className="Car__info">Стоимость</div>
+                    <div className="Car__price">150₽</div>
+                    <img className='Car__img' src={car1} alt="Car" />
+                  </div>
+                </label>
+              </li>
+              <li className='Car__item'>
+                <label>
+                  <input type="radio" name='car' id="car" />
+                  <div className="Car slide-in-blurred-top-2">
+                    <h5 className='Car__name'>Премиум</h5>
+                    <div className="Car__info">Стоимость</div>
+                    <div className="Car__price">250₽</div>
+                    <img className='Car__img' src={car2} alt="Car" />
+                  </div>
+                </label>
+              </li>
+              <li className='Car__item'>
+                <label>
+                  <input type="radio" name='car' id="car" />
+                  <div className="Car slide-in-blurred-top-3">
+                    <h5 className='Car__name'>Бизнес</h5>
+                    <div className="Car__info">Стоимость</div>
+                    <div className="Car__price">300₽</div>
+                    <img className='Car__img' src={car3} alt="Car" />
+                  </div>
+                </label>
+              </li>
+            </ul>
+            <input type="submit" value="Заказать" className='Login__submit nomargin' />
+          </div> :
+          <Link to='/profile' className="Login__submit Route__error-btn">Перейти в профиль</Link>}
+      </form>
     </div>
-
   }
 }
 
