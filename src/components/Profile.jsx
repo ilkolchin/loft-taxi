@@ -1,16 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateCard } from '../actions'
 import { Link } from 'react-router-dom';
 import { ProfileForm } from "./ProfileForm";
 
 class Profile extends React.Component {
-
-  cardUpdate = data => {
-    this.props.updateCard(
-      data.cardName, data.cardNumber, data.cardDate, data.cardCvc
-    )
-  }
 
   render() {
     return (
@@ -20,7 +13,7 @@ class Profile extends React.Component {
           <div className="Profile__wrapper">
             <h1 className="Profile__title">Профиль</h1>
             <h5 className="Profile__subtitle">Введите платежные данные</h5>
-            <ProfileForm cardUpdate={this.cardUpdate} />
+            <ProfileForm />
           </div>
 
           :
@@ -37,5 +30,5 @@ class Profile extends React.Component {
 
 export default connect(
   (state) => ({ isCardUpdated: state.card.isCardUpdated }),
-  { updateCard })
-  (Profile);
+  null
+)(Profile);

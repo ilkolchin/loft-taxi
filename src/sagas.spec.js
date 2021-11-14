@@ -1,6 +1,6 @@
 import { recordSaga } from './recordSaga';
 import { authenticateSaga, registrationSaga, updateCardSaga, getCardSaga, getAddressesSaga, getRouteSaga } from './sagas'
-import { authenticate, register, updateCard, askForCard, askForAddress, askForRoute } from './actions'
+import { authenticate, registrate, updateCard, askForCard, askForAddress, askForRoute } from './actions'
 
 jest.mock('./api', () => ({
   serverRegister: () => true,
@@ -15,9 +15,9 @@ jest.mock('./api', () => ({
     return data
   }, 
   serverGetRoute: () => {
-    const data = [[],[],[]];
+    const data = [];
     return data
-  },  //data
+  },
 }))
 
 describe('authenticateSaga', () => {
@@ -41,7 +41,7 @@ describe('registrationSaga', () => {
     it('registrates through api', async () => {
       const dispatched = await recordSaga(
         registrationSaga,
-        register('testEmail', 'testPassword', 'testName', 'testSurname')
+        registrate('testEmail', 'testPassword', 'testName', 'testSurname')
       )
       expect(dispatched).toEqual([
         {
@@ -106,7 +106,7 @@ describe('getRouteSaga', () => {
     it('provides route through api', async () => {
       const dispatched = await recordSaga(
         getRouteSaga,
-        askForAddress()
+        askForRoute()
       )
       expect(dispatched).toEqual([
         {
