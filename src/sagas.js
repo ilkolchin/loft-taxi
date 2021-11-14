@@ -3,7 +3,7 @@ import { AUTHENTICATE, REGISTER, UPDATECARD, ASKFORCARD, ASKFORADDRESS, ASKFOROU
 import { logIn, cardAdded, getAddresses, getRoute } from './actions';
 import { serverLogin, serverRegister, serverUpdateCard, serverAddressList, serverGetRoute, serverGetCard } from './api';
 
-function* authenticateSaga(action) {
+export function* authenticateSaga(action) {
   const { email, password } = action.payload;
   const success = yield call(serverLogin, email, password)
   if (success) {
@@ -11,7 +11,7 @@ function* authenticateSaga(action) {
   }
 }
 
-function* registrationSaga(action) {
+export function* registrationSaga(action) {
   const { email, password, name, surname } = action.payload;
   const success = yield call(serverRegister, email, password, name, surname)
   if (success) {
@@ -19,7 +19,7 @@ function* registrationSaga(action) {
   }
 }
 
-function* updateCardSaga(action) {
+export function* updateCardSaga(action) {
   const { cardName, cardNumber, cardDate, cardCvc } = action.payload;
   const success = yield call(serverUpdateCard, cardName, cardNumber, cardDate, cardCvc)
   if (success) {
@@ -27,20 +27,19 @@ function* updateCardSaga(action) {
   }
 }
 
-function* getCardSaga() {
+export function* getCardSaga() {
   const { id, cardNumber, expiryDate, cardName, cvc } = yield call(serverGetCard);
-  console.log(id, cardNumber, expiryDate, cardName, cvc);
   if ((id && cardNumber && expiryDate && cardName && cvc) !== undefined) {
     yield put(cardAdded());
   }
 }
 
-function* getAddressesSaga() {
+export function* getAddressesSaga() {
   const addresses = yield call(serverAddressList);
   yield put(getAddresses(addresses));
 }
 
-function* getRouteSaga(action) {
+export function* getRouteSaga(action) {
   const { from, to } = action.payload;
   const route = yield call(serverGetRoute, from, to);
   yield put(getRoute(route));
