@@ -10,7 +10,7 @@ class Header extends React.Component {
     return (
       <header>
       <Link to="/">
-        <img src={logo} alt="логотип такси" className="Header__logo" />
+        <img src={logo} alt="логотип такси" className="Header__logo slide-in-blurred-left" />
       </Link>
       <nav>
         <ul className="Nav">

@@ -3,7 +3,7 @@ import logo from '../img/big-logo.png';
 
 
 const HelloPart = () => (
-  <div className="App__logo">
+  <div className="App__logo slide-in-blurred-left">
     <img src={logo} alt="логотип такси" className="App__logo-img" />
   </div>
 );
