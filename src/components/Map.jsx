@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 import { connect } from "react-redux";
 import { Autocomplete, TextField} from "@mui/material";
 import { Link } from 'react-router-dom'
-import { askForAddress, askForRoute, askForCard } from '../actions'
+import { askForAddress, askForRoute, askForCard, clearRoute } from '../actions'
 import { drawRoute } from "../drawRoute";
 import car1 from '../img/car1.png'
 import car2 from '../img/car2.png'
@@ -30,6 +30,7 @@ class Map extends React.Component {
 
   componentWillUnmount() {
     this.map.remove();
+    this.props.clearRoute();
   }
 
   componentDidUpdate() {
@@ -79,7 +80,7 @@ class Map extends React.Component {
               <li className='Car__item'>
                 <label>
                   <input type="radio" name='car' id="car" />
-                  <div className="Car slide-in-blurred-top-1">
+                  <div className="Car">
                     <h5 className='Car__name'>Стандарт</h5>
                     <div className="Car__info">Стоимость</div>
                     <div className="Car__price">150₽</div>
@@ -90,7 +91,7 @@ class Map extends React.Component {
               <li className='Car__item'>
                 <label>
                   <input type="radio" name='car' id="car" />
-                  <div className="Car slide-in-blurred-top-2">
+                  <div className="Car">
                     <h5 className='Car__name'>Премиум</h5>
                     <div className="Car__info">Стоимость</div>
                     <div className="Car__price">250₽</div>
@@ -101,7 +102,7 @@ class Map extends React.Component {
               <li className='Car__item'>
                 <label>
                   <input type="radio" name='car' id="car" />
-                  <div className="Car slide-in-blurred-top-3">
+                  <div className="Car">
                     <h5 className='Car__name'>Бизнес</h5>
                     <div className="Car__info">Стоимость</div>
                     <div className="Car__price">300₽</div>
@@ -124,5 +125,5 @@ export default connect(
     addresses: state.address.addresses,
     route: state.route.route
   }),
-  { askForAddress, askForRoute, askForCard })
+  { askForAddress, askForRoute, askForCard, clearRoute })
   (Map);

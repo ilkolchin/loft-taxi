@@ -1,13 +1,16 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { AUTHENTICATE, REGISTER, UPDATECARD, ASKFORCARD, ASKFORADDRESS, ASKFOROUTE } from './actions';
-import { logIn, cardAdded, getAddresses, getRoute } from './actions';
+import { logIn, cardAdded, getAddresses, getRoute, addError } from './actions';
 import { serverLogin, serverRegister, serverUpdateCard, serverAddressList, serverGetRoute, serverGetCard } from './api';
 
 export function* authenticateSaga(action) {
   const { email, password } = action.payload;
-  const success = yield call(serverLogin, email, password)
-  if (success) {
+  const data = yield call(serverLogin, email, password)
+  if (data.success) {
     yield put(logIn())
+  } else {
+    yield put(addError(data.error))
+    console.log(data.error);
   }
 }
 
