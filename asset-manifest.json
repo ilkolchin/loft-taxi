@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/loft-taxi/static/css/main.8d4619f9.chunk.css",
-    "main.js": "/loft-taxi/static/js/main.47dd338d.chunk.js",
-    "main.js.map": "/loft-taxi/static/js/main.47dd338d.chunk.js.map",
-    "runtime-main.js": "/loft-taxi/static/js/runtime-main.26cf4315.js",
-    "runtime-main.js.map": "/loft-taxi/static/js/runtime-main.26cf4315.js.map",
-    "static/css/2.1d2e58b5.chunk.css": "/loft-taxi/static/css/2.1d2e58b5.chunk.css",
-    "static/js/2.762b8f38.chunk.js": "/loft-taxi/static/js/2.762b8f38.chunk.js",
-    "static/js/2.762b8f38.chunk.js.map": "/loft-taxi/static/js/2.762b8f38.chunk.js.map",
-    "index.html": "/loft-taxi/index.html",
-    "static/css/2.1d2e58b5.chunk.css.map": "/loft-taxi/static/css/2.1d2e58b5.chunk.css.map",
-    "static/css/main.8d4619f9.chunk.css.map": "/loft-taxi/static/css/main.8d4619f9.chunk.css.map",
-    "static/js/2.762b8f38.chunk.js.LICENSE.txt": "/loft-taxi/static/js/2.762b8f38.chunk.js.LICENSE.txt",
-    "static/media/Group 45.e5f02f51.png": "/loft-taxi/static/media/Group 45.e5f02f51.png",
-    "static/media/App.css": "/loft-taxi/static/media/map.6f03adef.png"
+    "main.css": "/static/css/main.c56512ba.chunk.css",
+    "main.js": "/static/js/main.47dd338d.chunk.js",
+    "main.js.map": "/static/js/main.47dd338d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8d1bca33.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8d1bca33.js.map",
+    "static/css/2.1d2e58b5.chunk.css": "/static/css/2.1d2e58b5.chunk.css",
+    "static/js/2.f1b786d0.chunk.js": "/static/js/2.f1b786d0.chunk.js",
+    "static/js/2.f1b786d0.chunk.js.map": "/static/js/2.f1b786d0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.1d2e58b5.chunk.css.map": "/static/css/2.1d2e58b5.chunk.css.map",
+    "static/css/main.c56512ba.chunk.css.map": "/static/css/main.c56512ba.chunk.css.map",
+    "static/js/2.f1b786d0.chunk.js.LICENSE.txt": "/static/js/2.f1b786d0.chunk.js.LICENSE.txt",
+    "static/media/Group 45.e5f02f51.png": "/static/media/Group 45.e5f02f51.png",
+    "static/media/App.css": "/static/media/map.6f03adef.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.26cf4315.js",
+    "static/js/runtime-main.8d1bca33.js",
     "static/css/2.1d2e58b5.chunk.css",
-    "static/js/2.762b8f38.chunk.js",
-    "static/css/main.8d4619f9.chunk.css",
+    "static/js/2.f1b786d0.chunk.js",
+    "static/css/main.c56512ba.chunk.css",
     "static/js/main.47dd338d.chunk.js"
   ]
 }
