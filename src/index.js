@@ -12,7 +12,7 @@ import { ThemeProvider } from '@mui/material';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/loft-taxi'>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <App />
