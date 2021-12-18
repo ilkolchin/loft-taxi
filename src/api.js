@@ -40,7 +40,7 @@ export const serverLogin = async (email, password) => {
   ).then(res => res.json()).then(data => {
     localStorage.setItem('token', data.token);
     console.log(data);
-    return data.success;
+    return data;
   });
 }
 

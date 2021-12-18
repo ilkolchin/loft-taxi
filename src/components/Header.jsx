@@ -9,9 +9,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-      <Link to="/">
-        <img src={logo} alt="логотип такси" className="Header__logo slide-in-blurred-left" />
-      </Link>
+        <img src={logo} alt="логотип такси" className="Header__logo" />
       <nav>
         <ul className="Nav">
           <li className="Nav_btn">
@@ -21,10 +19,7 @@ class Header extends React.Component {
             <Link to="/profile">Профиль</Link>
           </li>
           <li className="Nav_btn">
-              <Link to="/" onClick={() => {
-                this.props.logOut();
-                // localStorage.removeItem('token')
-              }}>Выйти</Link>
+              <Link to="/" onClick={() => {this.props.logOut()}}>Выйти</Link>
           </li>
         </ul>
       </nav>

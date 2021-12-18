@@ -44,7 +44,7 @@ export const ProfileForm = ({useDispatchHook=useDispatch}) => {
           </div>
         </div>
         <div className="Profile__block-inner">
-          <img src={CardImg} alt="CardImg"/>
+          <img src={CardImg} alt="CardImg" className='Profile__card-img'/>
         </div>
       </div>
 

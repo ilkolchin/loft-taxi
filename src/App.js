@@ -18,13 +18,6 @@ import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
-
-    // const token = localStorage.getItem('token');
-
-    // if (token !== undefined && token !== null ) {
-    //   this.props.logIn();
-    // }
-
     return <>
       <div className="App">
         {this.props.isLoggedIn && <Header />}
