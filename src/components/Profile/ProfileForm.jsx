@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { updateCard } from "../actions";
-import CardImg from '../img/Group 45.png'
+import { updateCard } from "../../actions";
+import CardImg from './img/Group 45.png'
 
 
 export const ProfileForm = ({useDispatchHook=useDispatch}) => {

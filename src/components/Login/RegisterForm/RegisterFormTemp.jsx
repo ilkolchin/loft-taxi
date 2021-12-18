@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { registrate } from "../actions";
+import { registrate } from "../../../actions";
 
 export const RegisterFormTemp = ({useDispatchHook=useDispatch}) => {
   

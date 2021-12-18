@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import { LoginFormWithAuth } from "./LoginForm";
-import { RegisterFormWithAuth } from "./RegisterForm";
+import { LoginFormWithAuth } from "./LoginForm/LoginForm";
+import { RegisterFormWithAuth } from "./RegisterForm/RegisterForm";
 
 class LoginPart extends React.Component {
   render() {

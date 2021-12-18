@@ -1,5 +1,5 @@
 import React from "react";
-import HelloPart from "./HelloPart";
+import HelloPart from "../HelloPart/HelloPart";
 import LoginPart from "./LoginPart";
 
 class LoginPage extends React.Component {

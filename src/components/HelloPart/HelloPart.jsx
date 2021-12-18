@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../img/big-logo.png';
+import logo from './img/big-logo.png';
 
 
 const HelloPart = () => (

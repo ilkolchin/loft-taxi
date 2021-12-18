@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { authenticate } from "../actions";
+import { authenticate } from "../../../actions";
 
 export const LoginFormTemp = ({ useDispatchHook = useDispatch }) => {
 

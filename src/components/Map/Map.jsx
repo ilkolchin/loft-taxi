@@ -3,11 +3,11 @@ import mapboxgl from "mapbox-gl";
 import { connect } from "react-redux";
 import { Autocomplete, TextField} from "@mui/material";
 import { Link } from 'react-router-dom'
-import { askForAddress, askForRoute, askForCard, clearRoute } from '../actions'
-import { drawRoute } from "../drawRoute";
-import car1 from '../img/car1.png'
-import car2 from '../img/car2.png'
-import car3 from '../img/car3.png'
+import { askForAddress, askForRoute, askForCard, clearRoute } from '../../actions'
+import { drawRoute } from "../../drawRoute";
+import car1 from './img/car1.png'
+import car2 from './img/car2.png'
+import car3 from './img/car3.png'
 
 class Map extends React.Component {
   map = null;

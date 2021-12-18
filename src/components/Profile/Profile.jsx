@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { ProfileForm } from "./ProfileForm";
-import { cardChange } from "../actions";
+import { cardChange } from "../../actions";
 
 class Profile extends React.Component {
 

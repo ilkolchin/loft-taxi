@@ -6,10 +6,10 @@ import './styles/base.css';
 import './styles/animista.css';
 import './App.css';
 
-import LoginPage from './components/LoginPage';
-import Header from './components/Header';
-import Profile from './components/Profile';
-import Map from './components/Map';
+import LoginPage from './components/Login/LoginPage';
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
+import Map from './components/Map/Map';
 import { PrivateRoute } from './components/PrivateRoute'
 
 import { connect } from 'react-redux';

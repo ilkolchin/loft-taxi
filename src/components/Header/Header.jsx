@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { logOut } from "../actions";
+import { logOut } from "../../actions";
 
-import logo from '../img/logo-taxi.png';
+import logo from './img/logo-taxi.png';
 
 class Header extends React.Component {
   render() {
