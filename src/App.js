@@ -1,8 +1,6 @@
 import React from 'react';
 
-import '../node_modules/mapbox-gl/src/css/mapbox-gl.css'
 import './styles/normalize.css';
-import './styles/base.css';
 import './styles/animista.css';
 import './App.css';
 

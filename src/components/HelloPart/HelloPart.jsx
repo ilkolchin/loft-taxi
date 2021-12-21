@@ -1,4 +1,6 @@
 import React from "react";
+
+import './HelloPart.css'
 import logo from './img/big-logo.png';
 
 

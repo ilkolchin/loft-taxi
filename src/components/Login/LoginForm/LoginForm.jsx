@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Link, Redirect } from 'react-router-dom'
 import { LoginFormTemp } from "./LoginFormTemp";
 
+import './LoginForm.css'
+
 class LoginForm extends React.Component {
 
   state = { errorText: '' }

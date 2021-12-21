@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ProfileForm } from "./ProfileForm";
 import { cardChange } from "../../actions";
 
+import './Profile.css'
+
 class Profile extends React.Component {
 
   render() {

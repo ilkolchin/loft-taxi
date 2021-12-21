@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { authenticate } from "../../../actions";
 
+import './LoginFormTemp.scss'
+
 export const LoginFormTemp = ({ useDispatchHook = useDispatch }) => {
 
   const dispatch = useDispatchHook();

@@ -1,0 +1,46 @@
+.Profile__content {
+  align-items: center;
+}
+
+.Profile__label {
+  font-size: 16px;
+  line-height: 19px;
+  color: #828282;
+}
+
+.Profile__input {
+  font-weight: bold;
+}
+
+.Profile__input::placeholder {
+  font-weight: normal;
+}
+
+.Profile__block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.Profile__block-inner {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.Profile__block-inner:last-child {
+  margin-right: 0;
+}
+
+.Profile__input-small {
+  width: 160px;
+}
+
+.nomargin {
+  margin: unset;
+}
+
+.Profile__card-img {
+  width: 391px;
+  height: 226px;
+}

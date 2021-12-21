@@ -2,6 +2,8 @@ import React from "react";
 import HelloPart from "../HelloPart/HelloPart";
 import LoginPart from "./LoginPart";
 
+import './LoginPage.css'
+
 class LoginPage extends React.Component {
 
   render() {

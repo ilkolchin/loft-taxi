@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  padding: 25px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.Header__logo {
+  width: 269px;
+  height: 61px;
+}
+
+.Nav {
+  display: flex;
+}
+
+.Nav_btn {
+  color: aliceblue;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 30px;
+}
+
+.Nav_btn:last-child {
+  margin-right: unset;
+}
+
+.Nav_btn:hover {
+  color: #FDBF5A;
+}
+
+.Nav_btn:active {
+  color: #FDBF5A;
+}

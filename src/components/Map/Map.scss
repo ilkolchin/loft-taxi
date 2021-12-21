@@ -1,0 +1,128 @@
+.Map__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.Route {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding-top: 25px;
+}
+
+.Route__input {
+  margin-bottom: 10px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: '';
+    border-bottom: 1px solid #E0E0E0;
+    width: 300px;
+    position: absolute;
+  }
+}
+
+.Route__error {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 10px;
+}
+
+.Route__error-info {
+  font-size: 18px;
+  line-height: 21px;
+  color: #7B7B7B;
+  margin-bottom: 25px;
+}
+
+.Route__error-btn {
+  margin: 20px;
+}
+
+.Route__cars {
+  margin-top: 25px;
+  padding: 32px;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Cars {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.Car__item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.Car {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 12px;
+
+  &:hover {
+    opacity: 1;
+    transition: 0.4s;
+  }
+}
+
+#car {
+  visibility: hidden;
+  position: absolute;
+}
+
+label>#car:checked+div {
+  opacity: 1;
+  transition: opacity 0.4s;
+  box-shadow: 0px 3px 20px rgb(253 191 90);
+}
+
+.Car__name {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.Car__info {
+  font-size: 11px;
+  line-height: 13px;
+  color: #828282;
+}
+
+.Car__price {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 13px;
+}
+
+.Car__img {
+  width: 95px;
+  height: 73px;
+}

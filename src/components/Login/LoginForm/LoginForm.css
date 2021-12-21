@@ -1,0 +1,43 @@
+.Login__form {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 50px 110px;
+  z-index: 3;
+  position: relative;
+}
+
+.Login__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.Login__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login__signUp {
+  margin-right: 10px;
+}
+
+.Login__signUp-link {
+  color: #FDBF5A;
+}
+
+.Login__signUp-link:hover {
+  text-decoration: underline;
+}
+
+.Error {
+  color: #FF0000;
+  position: absolute;
+  top: 57%; 
+}

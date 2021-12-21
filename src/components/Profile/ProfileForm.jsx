@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { updateCard } from "../../actions";
+
+import './ProfileForm.css'
 import CardImg from './img/Group 45.png'
 
 

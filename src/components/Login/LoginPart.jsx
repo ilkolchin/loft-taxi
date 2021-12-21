@@ -4,6 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import { LoginFormWithAuth } from "./LoginForm/LoginForm";
 import { RegisterFormWithAuth } from "./RegisterForm/RegisterForm";
 
+import './LoginPart.scss'
+
 class LoginPart extends React.Component {
   render() {
     return (

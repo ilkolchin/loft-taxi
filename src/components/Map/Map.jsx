@@ -1,10 +1,13 @@
 import React from "react";
 import mapboxgl from "mapbox-gl";
 import { connect } from "react-redux";
-import { Autocomplete, TextField} from "@mui/material";
 import { Link } from 'react-router-dom'
 import { askForAddress, askForRoute, askForCard, clearRoute } from '../../actions'
-import { drawRoute } from "../../drawRoute";
+import { drawRoute } from "./drawRoute";
+
+import '../../../node_modules/mapbox-gl/src/css/mapbox-gl.css'
+import './Map.scss'
+import { Autocomplete, TextField } from "@mui/material";
 import car1 from './img/car1.png'
 import car2 from './img/car2.png'
 import car3 from './img/car3.png'
