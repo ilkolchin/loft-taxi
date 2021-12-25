@@ -1,32 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './styles/normalize.css';
 import './styles/animista.css';
-import './App.css';
+import app from './App.module.css';
 
-import LoginPage from './components/Login/LoginPage';
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
-import Map from './components/Map/Map';
-import { PrivateRoute } from './components/PrivateRoute'
+import Router from './components/Router/Router';
 
-import { connect } from 'react-redux';
-import { logIn } from './actions';
-import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
     return <>
-      <div className="App">
+      <div className={app.inner}>
         {this.props.isLoggedIn && <Header />}
         <main>
           <section>
-            <Switch>
-              <Route exact path="/" component={LoginPage} />
-              <Route exact path="/signup" component={LoginPage} />
-              <PrivateRoute path="/profile" component={Profile} />
-              <PrivateRoute path="/map" component={Map} />
-            </Switch>
+            <Router />
           </section>
         </main>
       </div>
@@ -36,6 +26,6 @@ class App extends React.Component {
 
 export default connect(
   (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
-  { logIn }
+  null
 )(App);
 

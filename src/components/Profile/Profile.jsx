@@ -9,7 +9,7 @@ import './Profile.css'
 class Profile extends React.Component {
 
   render() {
-    return (
+    return <>
       <div className="Login__inner">
         {!this.props.isCardUpdated ?
 
@@ -24,15 +24,15 @@ class Profile extends React.Component {
           <div className="Profile__wrapper Profile__content">
             <h1 className="Profile__title">Профиль</h1>
             <h5 className="Profile__subtitle">Платёжные данные обновлены. Теперь вы можете заказывать такси.</h5>
-            <button className='Login__submit Profile_cardChange' onClick={()=>this.props.cardChange()}>Изменить данные карты</button>
+            <button className='Login__submit Profile_cardChange' onClick={() => this.props.cardChange()}>Изменить данные карты</button>
             <Link to='/map' className='Login__submit Profile__submit'>Перейти на карту</Link>
           </div>}
       </div>
-    )
+    </>
   }
 }
 
 export default connect(
   (state) => ({ isCardUpdated: state.card.isCardUpdated }),
-  ({cardChange})
+  ({ cardChange })
 )(Profile);

@@ -1,17 +1,3 @@
-.Map__wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.Map {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
 .Route {
   position: absolute;
   top: 2%;
@@ -78,51 +64,4 @@
   &:last-child {
     margin-right: 0;
   }
-}
-
-.Car {
-  background: #FFFFFF;
-  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  opacity: 0.5;
-  cursor: pointer;
-  padding: 12px;
-
-  &:hover {
-    opacity: 1;
-    transition: 0.4s;
-  }
-}
-
-#car {
-  visibility: hidden;
-  position: absolute;
-}
-
-label>#car:checked+div {
-  opacity: 1;
-  transition: opacity 0.4s;
-  box-shadow: 0px 3px 20px rgb(253 191 90);
-}
-
-.Car__name {
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.Car__info {
-  font-size: 11px;
-  line-height: 13px;
-  color: #828282;
-}
-
-.Car__price {
-  font-size: 24px;
-  line-height: 28px;
-  margin-bottom: 13px;
-}
-
-.Car__img {
-  width: 95px;
-  height: 73px;
 }
