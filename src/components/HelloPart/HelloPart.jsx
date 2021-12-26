@@ -1,12 +1,13 @@
 import React from "react";
 
-import './HelloPart.css'
+import styles from './HelloPart.module.css'
 import logo from './img/big-logo.png';
 
 
 const HelloPart = () => (
-  <div className="App__logo">
-    <img src={logo} alt="логотип такси" className="App__logo-img" />
+  <div className={styles.wrapper}>
+    <img src={logo} alt="логотип такси" className={styles.logo} />
+    <div className={styles.text}>ver. 1.3 (26/12)</div>
   </div>
 );
 

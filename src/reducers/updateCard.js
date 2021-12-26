@@ -1,7 +1,7 @@
 import { CARDADDED, CARDCHANGE } from "../actions";
 
 const initialState = {
-  isCardUpdated: true
+  isCardUpdated: false
 }
 
 export default function card(state = initialState, action) {
