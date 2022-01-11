@@ -7,7 +7,7 @@ import { drawRoute } from "./drawRoute";
 import Order from "../Order/Order";
 
 import '../../../node_modules/mapbox-gl/src/css/mapbox-gl.css'
-import map from './Map.module.css'
+import style from './Map.module.css'
 
 class Map extends React.Component {
   map = null;
@@ -40,8 +40,8 @@ class Map extends React.Component {
   }
 
   render() {
-    return <div className={map.wrapper} >
-      <div className={map.inner} ref={this.mapContainer} />
+    return <div className={style.wrapper} >
+      <div className={style.inner} ref={this.mapContainer} />
       <Order/>
     </div>
   }

@@ -1,0 +1,26 @@
+.default {
+  padding: 20px 55px;
+  background: #D8D7D5;
+  border-radius: 70px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+  border-style: none;
+  margin: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background: #FDBF5A;
+    transition: background 0.4s;
+  }
+
+  &:active {
+    background: #FFA842;
+    transition: background 0.4s;
+  }
+}
+
+.white {
+  color: white;
+}

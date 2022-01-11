@@ -5,6 +5,7 @@ import { ProfileForm } from "./ProfileForm";
 import { cardChange } from "../../actions";
 
 import './Profile.css'
+import Form from "./ProfileTemp/Form";
 
 const Profile = (props) => (
   <div className="Login__inner">
@@ -15,6 +16,7 @@ const Profile = (props) => (
         <h1 className="Profile__title">Профиль</h1>
         <h5 className="Profile__subtitle">Введите платежные данные</h5>
         <ProfileForm />
+        <Form/>
       </div>
 
       :

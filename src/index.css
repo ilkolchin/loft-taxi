@@ -51,3 +51,25 @@ img {
   display: block;
   max-width: 100%;
 }
+
+main {
+  flex-grow: 1;
+}
+
+/* Animations */
+
+.slide-in-blurred-left {
+  animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.slide-in-blurred-top-1 {
+  animation: slide-in-blurred-top 0.6s 0.12s both;
+}
+
+.slide-in-blurred-top-2 {
+  animation: slide-in-blurred-top 0.6s 0.14s both;
+}
+
+.slide-in-blurred-top-3 {
+  animation: slide-in-blurred-top 0.6s 0.16s both;
+}
