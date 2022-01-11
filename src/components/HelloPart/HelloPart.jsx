@@ -7,7 +7,7 @@ import logo from './img/big-logo.png';
 const HelloPart = () => (
   <div className={styles.wrapper}>
     <img src={logo} alt="логотип такси" className={styles.logo} />
-    <div className={styles.text}>ver. 1.3 (26/12)</div>
+    <div className={styles.text}>ver. 1.3.2 (11/01)</div>
   </div>
 );
 
